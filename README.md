@@ -1,4 +1,4 @@
-# Sea Ice Similarity Paper - Scripts to generate associated figures
+# Sea ice similarity paper code: Scripts to generate associated figures
 
 ## Reference: 
 Software reproduces the calculations and figures in an accompanying paper. Please cite the accompanying paper: 
