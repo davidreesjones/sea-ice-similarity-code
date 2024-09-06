@@ -1,7 +1,5 @@
 %% Initialization
 clear
-init_figure_settings
-init_color
 
 %% Set up path and directory structure
 restoredefaultpath
@@ -10,12 +8,21 @@ output_eps = true; % true means that EPS files are generated
 output_pdf = true; % true means that PDF files are generated
 if ~exist('output-eps/','dir') & output_eps
     mkdir 'output-eps/'
+end
+if output_eps
     addpath('output-eps/')
 end
 if ~exist('output-pdf/','dir') & output_pdf
     mkdir 'output-pdf/'
     addpath('output-pdf/')
 end
+if output_pdf
+    addpath('output-pdf/')
+end
+
+%% Initialize figure settings
+init_figure_settings
+init_color
 
 %% Generate figures
 fnum=1; figure_thermal_properties;
