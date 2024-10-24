@@ -82,7 +82,7 @@ axes(ax{1})
 set(gca,'XLim',[0 8],'YLim',[0 10])
 %text(1,4.5,['(a) $\omega=',num2str(v_omega(1)),'$'],'interpreter','latex','FontSize',fontsize)
 xlab=xlabel('$\tau$','interpreter','latex','FontSize',fontsize);
-ylab=ylabel('$\tilde{y}$','interpreter','latex','FontSize',fontsize,'Rotation',0);
+ylab=ylabel('$\hat{y}$','interpreter','latex','FontSize',fontsize,'Rotation',0);
 title('(a) Thickness','interpreter','latex','FontSize',fontsize)
 
 l=legend;
@@ -95,7 +95,7 @@ axes(ax{2})
 set(gca,'XLim',[0 6],'YLim',[0 2])
 %text(10.06,3.17,['(b) $\omega=',num2str(v_omega(2)),'$'],'interpreter','latex','FontSize',fontsize)
 xlab=xlabel('$\tau-\tau_s$','interpreter','latex','FontSize',fontsize);
-ylab=ylabel('$\frac{d\tilde{y}}{d\tau}$','interpreter','latex','FontSize',fontsize,'Rotation',0);
+ylab=ylabel('$\frac{d\hat{y}}{d\tau}$','interpreter','latex','FontSize',fontsize,'Rotation',0);
 title('(b) Growth rate','interpreter','latex','FontSize',fontsize)
 
 
