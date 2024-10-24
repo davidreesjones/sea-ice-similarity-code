@@ -49,16 +49,16 @@ for nplot=1:2
     end
 
 td=1;
-plot(tplot,y_td1,'DisplayName',['$\tau_d=',num2str(td),'$'],'Color',newcolors(1,:),'LineWidth',linewidth)
+plot(tplot,y_td1,'-','DisplayName',['$\tau_d=',num2str(td),'$'],'Color',newcolors(1,:),'LineWidth',linewidth)
 
 td=10;
-plot(tplot,y_td10,'DisplayName',['$\tau_d=',num2str(td),'$'],'Color',newcolors(2,:),'LineWidth',linewidth)
+plot(tplot,y_td10,'-','DisplayName',['$\tau_d=',num2str(td),'$'],'Color',newcolors(2,:),'LineWidth',linewidth)
 
 td=100;
-plot(tplot,y_td100,'DisplayName',['$\tau_d=',num2str(td),'$'],'Color',newcolors(3,:),'LineWidth',linewidth)
+plot(tplot,y_td100,'-','DisplayName',['$\tau_d=',num2str(td),'$'],'Color',newcolors(3,:),'LineWidth',linewidth)
 
 td=1000;
-plot(tplot,y_td1000,'DisplayName',['$\tau_d=',num2str(td),'$'],'Color',newcolors(3,:)/2,'LineWidth',linewidth)
+plot(tplot,y_td1000,'-','DisplayName',['$\tau_d=',num2str(td),'$'],'Color',newcolors(3,:)/2,'LineWidth',linewidth)
     
 plot(tplot,y_S2,'--k','DisplayName',['$\hat{S}=',num2str(S2),'$'],'LineWidth',linewidth)
 plot(tplot,y_S1,'-.k','DisplayName',['$\hat{S}=',num2str(S1),'$'],'LineWidth',linewidth)
