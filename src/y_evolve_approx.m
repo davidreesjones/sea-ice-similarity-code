@@ -3,7 +3,7 @@ function [sol_y,q0,qh1,qg1] = y_evolve_approx(par,tmax,g_tau)
 arguments
     par (1,1) struct; % contains dimensionless parameters
     tmax (1,1) double; % length of integration rune
-    g_tau (1,1) function_handle = @(t) 0; %time-dependent boundary temperature [default = 0; for initial growth q0]
+    g_tau (1,1) function_handle = @(t) 0; %time-dependent boundary temperature [default = 0; for initial growth q0 and fixed-boundary-temperature runs]
 end
 
 % Use finite difference approximation to estimate sensitivity to \hat{h}
