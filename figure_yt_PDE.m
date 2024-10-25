@@ -63,18 +63,22 @@ for I=1:3
             set(ax_inset2,'XLim',[0 .5],'YLim',[0 2]);
             set(ax_inset2,'Position',[0.49 0.24 0.1 0.2])
         case 3
-            vN=[51 1 2 4 6 10];
+            vN=[1 2 4 6 10];
             vtau=zeros(size(vN));
             vdxc=zeros(size(vN));
-            vyc=zeros(size(vN));
+            vyc=zeros(size(vN)); 
+            vdeltay=zeros(size(vN));
             for N=vN
-                [dxc,yc,fix_tau_switch]=process_pde_comparison(N);
+                [dxc,yc,fix_tau_switch,xp,fit0,fit1]=process_pde_comparison(N);
                 vtau(N==vN)=fix_tau_switch;
                 vdxc(N==vN)=dxc;
                 vyc(N==vN)=yc;
+                vdeltay(N==vN)=max(abs(fit0(xp)-fit1(xp)));
             end
-            plot(vyc,vdxc,'x','Color',col1,'Color',col1,'DisplayName','PDE','LineWidth',linewidth)
-            plot([vyc(1),10],[vyc(1),10]*vdxc(1)/vyc(1),'--','Color',col1,'Color',col1,'DisplayName','$\propto \tilde{y}(\tau_s)$','LineWidth',linewidth)
+            plot(vyc,vdxc,'s','Color',col1,'DisplayName','$\Delta \tau_s$','LineWidth',linewidth)
+            plot([0.5,10],[0.5,10]*vdxc(3)/vyc(3),'--','Color',col1,'DisplayName','$\propto \hat{y}(\tau_s)$','LineWidth',linewidth)
+            plot(vyc,vdeltay,'o','Color',col2,'DisplayName','$\Delta \hat{y}_s$','LineWidth',linewidth)
+            plot([0.5,10],[0.5,10]*vdeltay(3)/vyc(3),'LineStyle','-.','Color',col2,'DisplayName','$\propto \hat{y}(\tau_s)$','LineWidth',linewidth)
     end
 
 end
@@ -101,14 +105,14 @@ title('(b) Growth rate','interpreter','latex','FontSize',fontsize)
 
 axes(ax{3})
 set(gca,'XScale','log','YScale','log')
-set(gca,'XLim',[0.5 10],'YLim',[vdxc(1),1])
-title('(c) Lag','interpreter','latex','FontSize',fontsize)
+set(gca,'XLim',[0.5 10],'YLim',[0.9*min(vdxc(1),vdeltay(1)),3])
+title('(c) Lag, thickness difference','interpreter','latex','FontSize',fontsize)
 l2=legend;
 l2.Interpreter='latex';
 l2.Location="northwest";
 l2.FontSize=fontsize;
-xlab=xlabel('$\tilde{y}(\tau_s)$','interpreter','latex','FontSize',fontsize);
-ylab=ylabel('$\Delta \tau_s$','interpreter','latex','FontSize',fontsize,'Rotation',0);
+xlab=xlabel('$\hat{y}(\tau_s)$','interpreter','latex','FontSize',fontsize);
+%ylab=ylabel('$\Delta \tau_s$','interpreter','latex','FontSize',fontsize,'Rotation',0);
 ylab.Position(1)=ylab.Position(1)+0.05;
 
 % output eps file and pdf file depending on control flags 
