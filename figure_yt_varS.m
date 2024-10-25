@@ -65,7 +65,7 @@ plot(tplot,y_S1,'-.k','DisplayName',['$\hat{S}=',num2str(S1),'$'],'LineWidth',li
 
 end
 set(ax,'XLim',[0 20],'YLim',[0 4.3]);
-set(ax_inset,'XLim',[0 1.5],'YLim',[0 1]);
+set(ax_inset,'XLim',[0 3],'YLim',[0 1.8]);
 set(ax_inset,'Position',[.45 .2 .4 .32]);
 l=legend(ax,'Location','NorthWest','Interpreter','latex');
 
