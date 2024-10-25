@@ -53,6 +53,7 @@ for I=1:2
             cbar.Label.Rotation=0;
     end
     xlab=xlabel('$\theta_0$','interpreter','latex','FontSize',fontsize);
+    set(gca,'XTick',2:2:10)
     if I==1
         ylab=ylabel('$\hat{S}$','interpreter','latex','FontSize',fontsize,'Rotation',0);
         set(gca,'YTick',0:0.25:0.75,'YLim',[0 0.8])
@@ -101,7 +102,7 @@ l.Location="bestoutside";
 l.FontSize=fontsize;
 xlab=xlabel('$\hat{S}$','interpreter','latex','FontSize',fontsize);
 ylab=ylabel('$q$','interpreter','latex','FontSize',fontsize,'Rotation',0);
-
+set(gca,'XTick',0:0.25:0.75,'XLim',[0 0.8])
 
 % output eps file and pdf file depending on control flags 
 fig_name_stem=strcat('Fig',num2str(fnum),'_pardep_q1');
