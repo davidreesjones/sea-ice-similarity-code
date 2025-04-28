@@ -3,7 +3,7 @@
 ## Reference: 
 Software reproduces the calculations and figures in an accompanying paper. Please cite the accompanying paper: 
 
-D. W. Rees Jones, in preparation. Thermodynamic growth of sea ice: assessing the role of salinity using a quasi-static modelling framework. A preprint is available on the arXiv: https://doi.org/10.48550/arXiv.2409.17696. Please contact author (contact details below) for a suitable reference to cite. 
+Rees Jones, D. W. (2025). Thermodynamic growth of sea ice: assessing the role of salinity using a quasi-static modelling framework. *Journal of Fluid Mechanics*, **1005**, A7. doi:[10.1017/jfm.2024.1177](https://doi.org/10.1017/jfm.2024.1177).
 
 ## Instructions:
 * To generate the figures in the paper, run `make_all_figures`. This executes all the individual figure scripts. 
